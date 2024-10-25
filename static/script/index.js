@@ -350,9 +350,7 @@ let getTemplate = function(info){
 $module.innerHTML = getTemplate(info);
 
 browser.getInfo().then(function(info){
-    $module.innerHTML = getTemplate(info) + `
-        <iframe style="display:none;" src="https://passer-by.com/browser/stat.html?browser=${info.browser}&ua=${info.userAgent}" width="" height=""></iframe>
-    `;
+    $module.innerHTML = getTemplate(info);
     browser.getFingerprint().then(function(fingerprint){
         document.querySelector('#fingerprint').innerText = fingerprint.value;
     });
